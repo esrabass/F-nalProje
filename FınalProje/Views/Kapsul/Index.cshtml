@@ -1,0 +1,161 @@
+﻿@model List<FınalProje.Models.Kapsul>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Kapsüllerim";
+
+    var aktifKategoriId = Context.Request.Query["kategoriId"];
+}
+
+<div class="header-container">
+    <div class="header-spacer"></div>
+    <h2 class="header-title">Kapsüllerim</h2>
+    <div class="admin-management">
+    </div>
+</div>
+<div class="filter-buttons mb-4 text-center">
+    <a asp-action="Index"
+       asp-route-kategoriId="@ViewBag.KategoriId"
+       class="btn @(ViewBag.AktifFiltre == null ? "btn-primary" : "btn-outline-primary")">
+        Tümü
+    </a>
+
+    <a asp-action="Index"
+       asp-route-kategoriId="@ViewBag.KategoriId"
+       asp-route-filtre="kilitli"
+       class="btn @(ViewBag.AktifFiltre == "kilitli" ? "btn-warning" : "btn-outline-warning")">
+        🔒 Kilitli
+    </a>
+
+    <a asp-action="Index"
+       asp-route-kategoriId="@ViewBag.KategoriId"
+       asp-route-filtre="acik"
+       class="btn @(ViewBag.AktifFiltre == "acik" ? "btn-success" : "btn-outline-success")">
+        🔓 Açılmış
+    </a>
+</div>
+ 
+    <!-- Kapsül listesi -->
+    <div class="capsule-container">
+
+        @foreach (var item in Model)
+        {
+            var kapsulAcikMi = item.AcilmaTarihi <= DateTime.Now;
+
+            <div class="capsule-card">
+
+                <!-- Kapsül görseli -->
+                <img src="~/images/kapsul-7.jpeg"
+                     class="capsule-img"
+                     alt="Zaman kapsülü" />
+
+                <!-- Başlık -->
+                <h3>@item.Baslik</h3>
+
+                <!-- Açılma tarihi -->
+                <p>
+                    <strong>Açılma Tarihi:</strong>
+                    @item.AcilmaTarihi.ToString("dd.MM.yyyy")
+                </p>
+
+                <!-- Kapsül durumu -->
+                <span class="capsule-status">
+                    @(kapsulAcikMi ? "Açık 🔓" : "Kilitli 🔒")
+                </span>
+
+                <!-- Aksiyonlar -->
+                <div class="actions action-row">
+
+                    <!-- Detay (modal) -->
+                    <button type="button"
+                            class="btn btn-outline-info btn-sm"
+                            onclick="openDetailModal(@item.KapsulID)">
+                        Detay
+                    </button>
+
+                    @if (!kapsulAcikMi)
+                    {
+
+                    }
+                    else
+                    {
+                        <!-- Okuma -->
+                        <form asp-action="DetailsOpen" method="post" style="display:inline;">
+                            <input type="hidden" name="id" value="@item.KapsulID" />
+                            <button type="submit" class="btn btn-outline-success btn-sm">Oku</button>
+                        </form>
+                    }
+
+
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Modal işlemleri -->
+    <script>
+        function openDetailModal(id) {
+
+            fetch(`/Kapsul/GetDetailJson/${id}`)
+                .then(response => response.json())
+                .then(data => {
+
+                    const baslikEl = document.getElementById("modalBaslik");
+                    const tarihEl = document.getElementById("modalTarih");
+                    const sahipEl = document.getElementById("modalSahip");
+
+                    // Başlık
+                    baslikEl.innerText = data.baslik;
+
+                    // Sahip bilgisi
+                    sahipEl.innerText =
+                        "Kapsül Sahibi: " +
+                        (data.sahipAdSoyad ? data.sahipAdSoyad : "Belirtilmemiş");
+
+                    // Tarih hesaplama
+                    const bugun = new Date();
+                    const acilma = new Date(
+                        data.acilmaTarihi.split('.').reverse().join('-')
+                    );
+
+                    const gunFarki = Math.abs(
+                        Math.floor((acilma - bugun) / (1000 * 60 * 60 * 24))
+                    );
+
+                    const mesaj = acilma > bugun
+                        ? `🔒 Açılmasına ${gunFarki} gün kaldı`
+                        : `🔓 ${gunFarki} gün önce açıldı`;
+
+                    // Tarih + durum mesajı
+                    tarihEl.innerHTML = `${data.olusturmaTarihi}<br/>${mesaj}`;
+
+                    // Modal aç
+                    document.getElementById("detailModal").style.display = "flex";
+                })
+                .catch(err => {
+                    console.error("Modal veri hatası:", err);
+                });
+        }
+
+        function closeDetailModal() {
+            document.getElementById("detailModal").style.display = "none";
+        }
+    </script>
+
+    <!-- Detay modalı -->
+    <div id="detailModal" class="modal-overlay">
+
+        <div class="modal-box">
+
+            <span class="modal-close" onclick="closeDetailModal()">×</span>
+
+            <h3 id="modalBaslik"></h3>
+            <p id="modalSahip"></p>
+
+            <p>
+                <strong>Oluşturulma Tarihi:</strong>
+                <span id="modalTarih"></span>
+            </p>
+
+        </div>
+    </div>

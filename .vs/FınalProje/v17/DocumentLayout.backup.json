@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\controllers\\bildirimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\controllers\\bildirimcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\views\\bildirim\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\views\\bildirim\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\controllers\\kapsulcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\controllers\\kapsulcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\viewmodels\\bildirimlisteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\viewmodels\\bildirimlisteviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\views\\kapsul\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\views\\kapsul\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|c:\\users\\samet\\onedrive\\masa\u00FCst\u00FC\\f\u0131nalproje\\f\u0131nalproje\\controllers\\kategoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B3DED79-659B-4000-9CEC-E08B79C31BB1}|F\u0131nalProje\\F\u0131nalProje.csproj|solutionrelative:f\u0131nalproje\\controllers\\kategoricontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Views\\Bildirim\\Index.cshtml",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\Views\\Bildirim\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Views\\Bildirim\\Index.cshtml",
+              "RelativeToolTip": "F\u0131nalProje\\Views\\Bildirim\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-14T14:22:52.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BildirimController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\BildirimController.cs",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\Controllers\\BildirimController.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\BildirimController.cs",
+              "RelativeToolTip": "F\u0131nalProje\\Controllers\\BildirimController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAuwD4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:21:22.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BildirimListeViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\ViewModels\\BildirimListeViewModel.cs",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\ViewModels\\BildirimListeViewModel.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\ViewModels\\BildirimListeViewModel.cs",
+              "RelativeToolTip": "F\u0131nalProje\\ViewModels\\BildirimListeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:20:37.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Views\\Kapsul\\Index.cshtml",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\Views\\Kapsul\\Index.cshtml",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Views\\Kapsul\\Index.cshtml",
+              "RelativeToolTip": "F\u0131nalProje\\Views\\Kapsul\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-14T14:16:13.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KapsulController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\KapsulController.cs",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\Controllers\\KapsulController.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\KapsulController.cs",
+              "RelativeToolTip": "F\u0131nalProje\\Controllers\\KapsulController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T14:08:02.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KategoriController.cs",
+              "DocumentMoniker": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\KategoriController.cs",
+              "RelativeDocumentMoniker": "F\u0131nalProje\\Controllers\\KategoriController.cs",
+              "ToolTip": "C:\\Users\\samet\\OneDrive\\Masa\u00FCst\u00FC\\F\u0131nalProje\\F\u0131nalProje\\Controllers\\KategoriController.cs",
+              "RelativeToolTip": "F\u0131nalProje\\Controllers\\KategoriController.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAAwGcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T13:49:59.427Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

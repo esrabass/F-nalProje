@@ -1,0 +1,34 @@
+﻿@model List<FınalProje.ViewModels.KullaniciViewModel>
+
+<div class="container my-5">
+
+    <!-- Sahip listeleme kartı -->
+    <div class="sahip-card mx-auto">
+        <h2 class="text-center mb-4">Kullanıcılar</h2>
+
+        <!-- Sahiplerin listelendiği tablo -->
+        <table class="table table-borderless align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var k in Model)
+                {
+                    <tr>
+                        <!-- Kullanıcı adı -->
+                        <td>@k.Ad</td>
+
+                        <!-- Kullanıcı soyadı -->
+                        <td>@k.Soyad</td>
+
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

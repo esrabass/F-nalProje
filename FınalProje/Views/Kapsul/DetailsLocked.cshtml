@@ -1,0 +1,47 @@
+﻿@model FınalProje.Models.Kapsul
+
+@{
+    // Açılma tarihine kalan gün sayısı
+    var kalanGun = (Model.AcilmaTarihi.Date - DateTime.Now.Date).Days;
+}
+
+<div class="detail-page">
+    <div class="detail-panel">
+
+        <h2>🔒 Bu kapsül henüz açılmadı</h2>
+
+        <!-- Kapsül sahibi bilgisi -->
+        <p>
+            <strong>Kapsül Sahibi:</strong>
+            @(Model.Kullanici != null
+                        ? $"{Model.Kullanici.Ad} {Model.Kullanici.Soyad}"
+                        : "Sahip Belirtilmedi")
+        </p>
+
+        @if (kalanGun > 0)
+        {
+            <!-- Kalan gün bilgisi -->
+            <p style="margin-top:10px; font-size:16px;">
+                ⏳ <strong>Açılmasına son @kalanGun gün</strong>
+            </p>
+        }
+        else
+        {
+            <!-- Bugün açılıyor durumu -->
+            <p style="margin-top:10px; font-size:16px;">
+                🎉 <strong>Bugün açılıyor!</strong>
+            </p>
+        }
+
+        <br />
+
+        <!-- Kapsül listesine dönüş -->
+        <form asp-action="Index" method="post">
+            <input type="hidden" name="kategoriId" value="@Model.KategoriID" />
+            <button type="submit" class="btn btn-light">
+                ← Geri Dön
+            </button>
+        </form>
+
+    </div>
+</div>

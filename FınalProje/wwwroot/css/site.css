@@ -1,0 +1,914 @@
+/* ========================================================= */
+/* 1. GENEL HTML & BODY AYARLARI                             */
+/* ========================================================= */
+
+/* Varsayýlan yazý boyutu (mobil öncelikli) */
+html {
+    font-size: 14px;
+}
+
+/* Tablet ve üzeri ekranlarda yazý boyutu büyütülür */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* Focus durumunda buton ve inputlar için mavi vurgu */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+/* Sayfanýn tamamýnýn yüksekliðini garanti eder */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/* Footer üstüne binmemesi için alt boþluk */
+body {
+    margin-bottom: 60px;
+}
+
+/* Sayfa arka plan resim ayarlarý */
+body {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Sayfa genelindeki varsayýlan boþluklarý sýfýrla */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* ========================================================= */
+/* 2. HERO (ANA SAYFA KARÞILAMA ALANI)                       */
+/* ========================================================= */
+
+/* Ana hero alaný görsel ve yerleþim ayarlarý */
+.hero {
+    min-height: 100vh;
+    background-image: url('/images/kapsul-11.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero içeriði (karartýlmýþ merkezi kutu) */
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+    /* Hero içindeki butonun özel stili */
+    .hero-content .btn {
+        background-color: #0d6efd !important;
+        color: white !important;
+        padding: 12px 30px;
+        border-radius: 6px;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+        .hero-content .btn:hover {
+            background-color: #0b5ed7 !important;
+        }
+
+
+/* ========================================================= */
+/* 3. FOOTER (SAYFA ALTI) AYARLARI                           */
+/* ========================================================= */
+
+/* Footer genel görünümü */
+footer {
+    background-color: rgba(26, 26, 26, 0.95);
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    width: 100%;
+}
+
+    /* Footer içindeki container boþluklarýný sýfýrla */
+    footer .container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+
+/* ========================================================= */
+/* 4. KAPSÜL LÝSTESÝ GENEL GÖRÜNÜM                           */
+/* ========================================================= */
+
+/* Sayfa baþlýðý stili */
+.page-title {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 36px;
+}
+
+/* Yeni kapsül oluþturma butonu hizalamasý */
+.add-btn {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+/* ========================================================= */
+/* 5. KAPSÜL LÝSTESÝ - 4'LÜ GRID YAPISI                      */
+/* ========================================================= */
+
+/* Kapsülleri 4 sütun halinde dizen grid */
+.capsule-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tekil kapsül kartý kutusu */
+.capsule-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+}
+
+/* Kapsül görseli stili */
+.capsule-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+}
+
+/* Kapsül baþlýðý (Metin uzunsa 2 satýrda keser) */
+.capsule-card h3 {
+    min-height: 3em;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Kilitli/Açýk durum etiketi */
+.status {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+
+/* ========================================================= */
+/* 6. KAPSÜL AKSÝYON BUTONLARI (Detay, Oku, Sil)             */
+/* ========================================================= */
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+    .actions a {
+        flex: 1;
+        text-align: center;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 500;
+        transition: 0.3s;
+        text-decoration: none !important;
+    }
+
+/* Kart içindeki buton satýrý düzeni */
+.action-row {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+    /* Buton boyut ve font ayarlarý */
+    .action-row .btn,
+    .action-row button {
+        min-width: 90px;
+        text-align: center;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+
+
+/* ========================================================= */
+/* 7. DETAY SAYFALARI (LOCKED & OPEN)                        */
+/* ========================================================= */
+
+/* Kilitli detay sayfasý arka planý */
+.detail-page {
+    min-height: 100vh;
+    background-image: url('/images/kapsul-5.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Kilitli içerik paneli */
+.detail-panel {
+    max-width: 760px;
+    padding: 60px 70px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Açýlmýþ kapsül sayfasý arka planý */
+.kapsul-6 {
+    background-image: url('/images/kapsul-6.jpeg');
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Not kutusu (Yarý saydam cam etkisi) */
+.note-box {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 60px 40px;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    /* Geri dön butonu stili */
+    .note-box a.btn {
+        display: block;
+        margin: 45px auto 0 auto;
+        padding: 10px 28px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #4a3f35;
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(120, 90, 60, 0.25);
+        border-radius: 20px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+        transition: all 0.25s ease;
+    }
+
+        .note-box a.btn:hover {
+            background: rgba(255, 255, 255, 0.75);
+            color: #2f261f;
+            transform: translateY(-1px);
+        }
+
+
+/* ========================================================= */
+/* 8. MODAL (BÝLGÝ PENCERESÝ) TASARIMI                       */
+/* ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box {
+    background: #fff;
+    width: 420px;
+    padding: 30px;
+    border-radius: 16px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* ========================================================= */
+/* 9. YENÝ KAPSÜL OLUÞTURMA SAYFASI                          */
+/* ========================================================= */
+
+.create-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    min-height: calc(100vh - 120px);
+}
+
+.create-box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.create-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.create-right {
+    flex: 1;
+    line-height: 0;
+}
+
+    .create-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 450px;
+    }
+
+.create-left h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .create-box {
+        flex-direction: column;
+    }
+
+    .create-right {
+        order: -1;
+    }
+}
+
+
+/* ========================================================= */
+/* 10. KAPSÜL DÜZENLEME (EDIT) SAYFASI                       */
+/* ========================================================= */
+
+.edit-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    width: 95%;
+    max-width: 750px;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    margin: 40px auto;
+}
+
+.edit-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.edit-right {
+    flex: 1;
+    line-height: 0;
+}
+
+    .edit-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 400px;
+    }
+
+.edit-title {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 2px solid #0d6efd;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .edit-page {
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .edit-right {
+        order: -1;
+    }
+}
+
+
+/* ========================================================= */
+/* 11. SAYFA YERLEÞÝMÝ & FOOTER KONUMLANDIRMA                */
+/* ========================================================= */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+/* ========================================================= */
+/* 12. KATEGORÝ SEÇÝM SAYFASI (GRID & KARTLAR)               */
+/* ========================================================= */
+
+.kategori-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.kategori-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 800px;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    text-decoration: none;
+    transition: transform .3s ease;
+}
+
+    .kategori-card:hover {
+        transform: translateY(-6px);
+    }
+
+.kategori-image {
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+.kategori-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 20px 40px;
+    text-align: center;
+}
+
+    .kategori-body h4 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #000;
+    }
+
+    .kategori-body span {
+        color: #d2b48c;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+
+/* ========================================================= */
+/* 13. TEMA RENKLERÝ VE NAVIGASYON                           */
+/* ========================================================= */
+
+/* Kahverengi Navbar ve Footer Temasý */
+footer {
+    background: #3e2723 !important;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.navbar, header, [class*="bg-dark"] {
+    background-color: #3e2723 !important;
+    background: #3e2723 !important;
+}
+
+/* Hoþgeldiniz butonu özel rengi */
+.btn.hosgeldiniz-btn {
+    background-color: #d2b48c !important;
+    border-color: #c3a36f !important;
+    color: #3b2f1e !important;
+}
+
+    .btn.hosgeldiniz-btn:hover {
+        background-color: #c3a36f !important;
+        border-color: #b8955f !important;
+        color: #2a1f12 !important;
+    }
+
+/* Genel buton yuvarlaklýk ayarý */
+.btn {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+}
+
+
+/* ========================================================= */
+/* 14. BUTON RENK PALETÝ (DETAY, OKU, SÝL)                   */
+/* ========================================================= */
+
+/* DETAY BUTONU - Pastel Mavi/Gri */
+.btn-outline-info, .btn-info {
+    background-color: #d1e3e9 !important;
+    border-color: #b5ced6 !important;
+    color: #4a6670 !important;
+}
+
+    .btn-outline-info:hover {
+        background-color: #b5ced6 !important;
+        color: #2c4149 !important;
+    }
+
+/* OKU BUTONU - Pastel Yeþil/Adaçayý */
+.btn-outline-success, .btn-success {
+    background-color: #e2eadd !important;
+    border-color: #ccd9c4 !important;
+    color: #5a6b50 !important;
+}
+
+    .btn-outline-success:hover {
+        background-color: #ccd9c4 !important;
+        color: #3e4b36 !important;
+    }
+
+/* ÝKÝNCÝL BUTON - Pastel Krem/Vizon */
+.btn-outline-secondary, .btn-secondary {
+    background-color: #ede0d4 !important;
+    border-color: #ddc8b4 !important;
+    color: #7f5539 !important;
+}
+
+    .btn-outline-secondary:hover, .btn-secondary:hover {
+        background-color: #ddc8b4 !important;
+        color: #432818 !important;
+    }
+
+/* SÝL BUTONU - Pastel Gül/Kiremit */
+.btn-outline-danger, .btn-danger {
+    background-color: #f2d7d7 !important;
+    border-color: #e6b8b8 !important;
+    color: #945454 !important;
+}
+
+    .btn-outline-danger:hover {
+        background-color: #e6b8b8 !important;
+        color: #663333 !important;
+    }
+
+
+/* ========================================================= */
+/* 15. BÝLDÝRÝM PANELÝ VE SCROLLBAR AYARLARI                 */
+/* ========================================================= */
+
+/* Standart dropdown listesi kaydýrma ayarý */
+.dropdown-menu {
+    max-height: 350px !important;
+    overflow-y: auto !important;
+    min-width: 320px !important;
+}
+
+    .dropdown-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        background: #d2b48c;
+        border-radius: 10px;
+    }
+
+/* Kapsül listesi zorunlu 4'lü hizalama */
+.capsule-container {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+}
+
+.capsule-card {
+    width: auto !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.capsule-img {
+    width: 100% !important;
+    height: 160px !important;
+    object-fit: cover !important;
+}
+
+
+/* ========================================================= */
+/* 16. BÝLDÝRÝM PANELÝ ÖZEL TASARIM VE SÝLME                 */
+/* ========================================================= */
+
+.dropdown-menu-notifications {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    width: 350px !important;
+    padding: 0 !important;
+}
+
+    .dropdown-menu-notifications::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .dropdown-menu-notifications::-webkit-scrollbar-thumb {
+        background: #d2b48c;
+        border-radius: 10px;
+    }
+
+.notification-item {
+    position: relative;
+    padding: 12px 35px 12px 15px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+    .notification-item:hover {
+        background-color: #f9f9f9;
+    }
+
+.btn-delete-notification {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+    .btn-delete-notification:hover {
+        color: #dc3545;
+    }
+
+
+/* ========================================================= */
+/* 17. MODERN BÝLDÝRÝM SCROLL (KIRMIZI TASARIM)              */
+/* ========================================================= */
+
+.dropdown-menu-notifications {
+    max-height: 350px !important;
+    overflow-y: auto !important;
+    width: 320px !important;
+    scrollbar-width: thin;
+}
+
+    .dropdown-menu-notifications::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Kaydýrma çubuðunun kýrmýzý olduðu bölüm */
+    .dropdown-menu-notifications::-webkit-scrollbar-thumb {
+        background-color: #ff0000;
+        border-radius: 10px;
+    }
+
+/* Ortak kart görünümü */
+.sahip-card,
+.edit-card {
+    max-width: 720px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Tablo satýr hover */
+.table tbody tr:hover {
+    background-color: #faf6f2;
+}
+
+/* Baþlýklar */
+h2, h3 {
+    font-weight: 600;
+    color: #2f1f1a;
+}
+
+/* ===============================
+   YENÝ SAHÝP OLUÞTUR - PASTEL MAVÝ
+================================ */
+
+.btn.btn-primary {
+    background-color: #cfe8ff !important; /* pastel mavi */
+    color: #0b3c6f !important;
+    border: none;
+    border-radius: 10px;
+}
+
+    .btn.btn-primary:hover {
+        background-color: #b7dbff !important;
+        color: #06294f !important;
+    }
+
+    /* ikon rengi */
+    .btn.btn-primary i {
+        color: #0b3c6f;
+    }
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0;
+    position: relative;
+}
+
+.page-title {
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+}
+
+.admin-controls {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 50px auto;
+}
+
+.category-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    border: none;
+    cursor: pointer;
+}
+
+    .category-card:hover {
+        transform: translateY(-5px);
+    }
+
+.category-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.category-body {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Üst Baþlýk Konteynýrý */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Sol, Orta ve Sað arasýnda boþluk býrakýr */
+    align-items: center;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+/* Sol tarafý boþ býrakýyoruz ki baþlýk tam ortalansýn (dengeleyici) */
+.header-spacer {
+    flex: 1;
+}
+
+.header-title {
+    flex: 2; /* Baþlýða daha fazla alan ver */
+    text-align: center;
+    margin: 0;
+    font-weight: 800;
+    font-size: 32px;
+    color: #333;
+}
+
+/* Sað taraftaki Yönetim Butonlarý */
+.admin-management {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Modern Buton Tasarýmý */
+.btn-manage {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 14px;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-add {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-manage:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    color: white;
+}
+

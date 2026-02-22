@@ -1,0 +1,22 @@
+﻿@{
+    // Sayfanın başlığını ayarlar
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="hero">
+    <div class="hero-content">
+        <!-- Proje başlığı -->
+        <h1>Zaman Kapsülü</h1>
+        <!-- Projenin amacını anlatan kısa açıklama -->
+        <p>
+            Bugünden geleceğe bir mesaj bırak. <br />
+            Anılarını sakla, zamanı geldiğinde tekrar keşfet.
+        </p>
+        <!-- Kullanıcıyı kapsül listeleme sayfasına yönlendiren buton -->
+        <a asp-controller="Kategori" asp-action="Index"
+           class="btn btn-lg  hosgeldiniz-btn">
+            Hoş Geldiniz
+        </a>
+
+    </div>
+</div>

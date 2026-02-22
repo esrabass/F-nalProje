@@ -1,0 +1,41 @@
+﻿@model FınalProje.Models.Kapsul
+
+<div class="kapsul-6">
+
+    <div class="container py-5 text-center">
+
+        <!-- Not içeriğinin gösterildiği ana kutu -->
+        <div class="note-box">
+
+            <h2>Kapsül Notu</h2>
+
+            <!-- Kapsül sahibi bilgisi -->
+            <p>
+                <strong>Kapsül Sahibi:</strong>
+                @(Model.Kullanici != null
+                                ? Model.Kullanici.Ad + " " + Model.Kullanici.Soyad
+                                : "Sahip Belirtilmedi")
+            </p>
+
+            <hr />
+
+            <!-- Kapsül notu (boşsa bilgilendirme mesajı gösterilir) -->
+            <p>
+                @(string.IsNullOrWhiteSpace(Model.Not)
+                                ? "Bu kapsülde henüz bir not bulunmuyor."
+                                : Model.Not)
+            </p>
+
+            <!-- Kapsül listesine geri dönüş -->
+            <form asp-controller="Kapsul" asp-action="Index" method="post">
+                <input type="hidden" name="kategoriId" value="@Model.KategoriID" />
+
+                <button type="submit" class="btn btn-secondary">
+                    ← Geri Dön
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+</div>

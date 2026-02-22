@@ -1,0 +1,79 @@
+﻿@model FınalProje.ViewModels.KapsulViewModel
+
+@{
+    ViewData["Title"] = "Kapsül Düzenle";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-header bg-dark text-white text-center" style="border-radius: 15px 15px 0 0;">
+                    <h3 class="m-0" style="font-weight: 700; color:white;">Kapsül Düzenle</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Edit" method="post">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="KategoriID" class="form-label" style="font-weight: 600;">Kategori Adı</label>
+                            <select asp-for="KategoriID" asp-items="Model.KategoriListesi" class="form-select form-select-lg" style="border-radius: 8px;">
+                                <option value="">-- Kategori Seçin --</option>
+                            </select>
+                            <span asp-validation-for="KategoriID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="KullaniciID" class="form-label" style="font-weight: 600;">Kapsül Sahibi</label>
+                            <select asp-for="KullaniciID" asp-items="Model.KullaniciListesi" class="form-select form-select-lg" style="border-radius: 8px;">
+                                <option value="">-- Kullanıcıyı Seçin --</option>
+                            </select>
+                            <span asp-validation-for="KullaniciID" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="Baslik" class="form-label" style="font-weight: 600;">Kapsül Başlığı</label>
+                            <input asp-for="Baslik" class="form-control form-control-lg" style="border-radius: 8px;" placeholder="Kapsül başlığını yazın..." />
+                            <span asp-validation-for="Baslik" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="Not" class="form-label" style="font-weight: 600;">İçerik / Not</label>
+                            <textarea asp-for="Not" class="form-control form-control-lg" style="border-radius: 8px;" rows="3" placeholder="Geleceğe notunuzu yazın..."></textarea>
+                            <span asp-validation-for="Not" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 form-group mb-4">
+                                <label asp-for="OlusturmaTarihi" class="form-label" style="font-weight: 600;">Oluşturma Tarihi</label>
+                                <input asp-for="OlusturmaTarihi" type="date" class="form-control form-control-lg" style="border-radius: 8px;" />
+                                <span asp-validation-for="OlusturmaTarihi" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 form-group mb-4">
+                                <label asp-for="AcilmaTarihi" class="form-label" style="font-weight: 600;">Açılma Tarihi</label>
+                                <input asp-for="AcilmaTarihi" type="date" class="form-control form-control-lg" style="border-radius: 8px;" />
+                                <span asp-validation-for="AcilmaTarihi" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 8px; font-weight: 600;">
+                                Güncelleştirmeleri Kaydet
+                            </button>
+                            <a asp-action="Yonetim" class="btn btn-outline-secondary" style="border-radius: 8px;">
+                                Vazgeç ve Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

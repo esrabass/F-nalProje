@@ -1,0 +1,24 @@
+﻿@model FınalProje.Models.Kapsul
+
+<h2>Kapsül Sil</h2>
+
+<!-- Silme onayı -->
+<p>
+    <strong>@Model.Baslik</strong> kapsülünü silmek istediğine emin misin?
+</p>
+
+<form asp-action="DeleteConfirmed" method="post">
+    @Html.AntiForgeryToken()
+
+    <!-- Kapsül ID -->
+    <input type="hidden" name="id" value="@Model.KapsulID" />
+
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+
+    <!-- Listeye geri dön -->
+    <a asp-action="Index"
+       asp-route-kategoriId="@Model.KategoriID"
+       class="btn btn-secondary">
+        Vazgeç
+    </a>
+</form>

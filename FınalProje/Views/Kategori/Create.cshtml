@@ -1,0 +1,43 @@
+﻿@model FınalProje.ViewModels.KategoriViewModel
+
+@{
+    ViewData["Title"] = "Yeni Kategori Ekle";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0" style="border-radius: 15px;">
+                <div class="card-header bg-dark text-white text-center" style="border-radius: 15px 15px 0 0;">
+                    <h3 class="m-0" style="font-weight: 700; color:white;">Yeni Kategori Ekle</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="Ad" class="form-label" style="font-weight: 600;">Kategori Adı</label>
+                            <input asp-for="Ad" class="form-control form-control-lg" style="border-radius: 8px;" />
+                            <span asp-validation-for="Ad" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg" style="border-radius: 8px; font-weight: 600;">
+                                Kaydet
+                            </button>
+                            <a asp-action="Yonetim" class="btn btn-outline-secondary" style="border-radius: 8px;">
+                                Listeye Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

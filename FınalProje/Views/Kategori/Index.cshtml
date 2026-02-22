@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FınalProje.ViewModels.KategoriViewModel>
+
+@{
+    ViewData["Title"] = "Kategoriler";
+}
+
+<div class="header-container">
+    <div class="header-spacer"></div>
+    <h2 class="header-title">Kategori Seç</h2>
+    <div class="admin-management">
+    </div>
+</div>
+
+<div class="category-grid">
+    @foreach (var kategori in Model)
+    {
+        string resimDosyaAdi = kategori.KategoriID switch
+        {
+            1 => "kapsul-16.jpeg",
+            2 => "kapsul-18.jpeg",
+            3 => "kapsul-17.jpeg",
+            4 => "kapsul-15.jpeg",
+            _ => "default-kapsul.jpg" 
+        };
+
+        <form asp-controller="Kapsul" asp-action="Index" method="post">
+            <input type="hidden" name="kategoriId" value="@kategori.KategoriID" />
+
+            <button type="submit" class="category-card" style="width: 100%; border:none; background:none; padding:0;">
+
+                <div class="category-img" style="background-image:url('/images/@resimDosyaAdi')"></div>
+
+                <div class="category-body">
+                    <h4 style="margin:0; font-size:26px; font-weight:800;">@kategori.Ad</h4>
+                    <span style="margin-top:12px; color:#d2b48c; font-weight:700;">Kapsülleri Gör</span>
+                </div>
+            </button>
+        </form>
+    }
+</div>
